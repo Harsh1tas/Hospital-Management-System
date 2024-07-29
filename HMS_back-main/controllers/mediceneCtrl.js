@@ -84,40 +84,8 @@ const postMediceneController = async (req, res) => {
 
 
 
-const getAllOrders= async(req,res)=>{
-  try{
-    const user = await buymediceneModel.find({userId: req.body.userId });
-    res.status(200).send({
-      success: true,
-      message: "All medicene List recieved",
-      data: user
-    })
-  }catch(error){
-    console.log(error);
-    res.status(500).send({
-      success: false,
-      message: "unable to get Order List",
-      error
-    })
-  }
-};
 
-const getAllUserOrders= async(req,res)=>{
-  try{
-    const user = await buymediceneModel.find();
-    res.status(200).send({
-      success: true,
-      message: "All medicene List recieved",
-      data: user
-    })
-  }catch(error){
-    console.log(error);
-    res.status(500).send({
-      success: false,
-      message: "unable to get Order List",
-      error
-    })
-  }
-};
 
-module.exports = { postController , getAllMediceneController, getMedicenebyId, postMediceneController,getAllOrders,getAllUserOrders }
+
+
+module.exports = { postController , getAllMediceneController, getMedicenebyId, postMediceneController}
